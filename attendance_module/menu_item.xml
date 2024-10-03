@@ -1,0 +1,11 @@
+<odoo>
+    <menuitem name="Quản lý báo danh"
+              id="menu_attendance_root"
+              groups="base.group_no_one"
+              web_icon="static/description/icon.png"
+              sequence="1"/>
+
+    <menuitem id="menu_attendance" name="Attendance Record"
+              parent="menu_attendance_root" sequence="1" action="action_attendance.basic"/>
+
+</odoo>

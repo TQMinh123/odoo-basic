@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="attendance.basic_tree" model="ir.ui.view">
+            <field name="name">Attendance Record</field>
+            <field name="model">attendance.basic</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="user_id"/>
+                    <field name="date"/>
+                    <field name="is_attended"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="attendance.basic_form" model="ir.ui.view">
+            <field name="name">Attendance Record</field>
+            <field name="model">attendance.basic</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="user_id" force_save="1"/>
+                                <field name="date"/>
+                            </group>
+                            <group>
+                                <field name="is_attended"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="attendance.basic_search" model="ir.ui.view">
+            <field name="name">Attendance Record</field>
+            <field name="model">attendance.basic</field>
+            <field name="arch" type="xml">
+                <search>
+                    <group expand="0" string="Group By">
+                        <field name="user_id"/>
+                        <field name="date"/>
+                        <field name="is_attended"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="action_attendance.basic" model="ir.actions.act_window">
+            <field name="name">Attendance Record</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">attendance.basic</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>
