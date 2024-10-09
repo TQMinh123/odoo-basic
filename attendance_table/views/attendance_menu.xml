@@ -1,0 +1,11 @@
+<odoo>
+    <menuitem id="menu_attendance_root" name="Attendance" sequence="1"/>
+
+    <record id="action_attendance" model="ir.actions.act_window">
+        <field name="name">Attendance Records</field>
+        <field name="res_model">attendance.record</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_attendance_records" name="Attendance Records" parent="menu_attendance_root" action="action_attendance" sequence="1"/>
+</odoo>

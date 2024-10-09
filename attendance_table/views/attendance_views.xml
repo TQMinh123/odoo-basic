@@ -1,0 +1,35 @@
+<odoo>
+    <record id="view_attendance_form" model="ir.ui.view">
+        <field name="name">attendance.record.form</field>
+        <field name="model">attendance.record</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="user_id"/>
+                    <field name="date"/>
+                    <field name="present"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_attendance_tree" model="ir.ui.view">
+        <field name="name">attendance.record.tree</field>
+        <field name="model">attendance.record</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="user_id"/>
+                <field name="date"/>
+                <field name="present"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_attendance" model="ir.actions.act_window">
+        <field name="name">Attendance Records</field>
+        <field name="res_model">attendance.record</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_attendance_root" name="Attendance" action="action_attendance" sequence="1"/>
+</odoo>

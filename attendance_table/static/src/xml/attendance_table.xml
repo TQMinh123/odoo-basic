@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="attendance_table_template">
+        <div>
+            <h3>Attendance Table</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <t t-foreach="state.months" t-as="month">
+                            <th><t t-esc="month"/></th>
+                        </t>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="state.users" t-as="user">
+                        <tr>
+                            <td><t t-esc="user.name"/></td>
+                            <t t-foreach="state.months" t-as="month">
+                                <td>
+                                    <input type="checkbox" t-att-checked="state.attendance[user.id][month]"
+                                           t-on-click="toggleAttendance(user.id, month)"/>
+                                </td>
+                            </t>
+                        </tr>
+                    </t>
+                </tbody>
+            </table>
+            <button t-on-click="saveAttendance" class="btn btn-primary">Save Attendance</button>
+        </div>
+    </t>
+</templates>
